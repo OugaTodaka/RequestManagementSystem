@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>要望管理</title>
+<link rel="icon" type="image/x-icon" href="">
+</head>
+<body>
+<main>
+<form action="{% url 'User:signin_request' %}" method="POST">
+    {% csrf_token %}
+    <div>
+        <label for="username">Username:<br></label>
+        <input type="text" name="username" required/>
+    </div>
+    <div>
+        <label for="password">Password:<br></label>
+        <input type="password" name="password" required/>
+    </div>
+    <input type="submit" value="sign in"/>
+</form>
+
+</main>
+</body>
+</html>
