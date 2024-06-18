@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'User.apps.UserConfig',
     'Management.apps.ManagementConfig',
+    'inquiry.apps.InquiryConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
