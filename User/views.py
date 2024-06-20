@@ -14,8 +14,6 @@ def signin_request(request):
     username = request.POST['username']
     password = request.POST['password']
 
-    print(make_password("ouga"))
-
     try:
         user = CustomUser.objects.get(username=username)
     except CustomUser.DoesNotExist:
