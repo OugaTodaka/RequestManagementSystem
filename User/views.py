@@ -3,6 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from .models import CustomUser
 from django.urls import reverse
 from django.contrib.auth import login,logout
+from django.contrib.auth.hashers import check_password, make_password
 from django.template import loader
 
 def signin(request):
@@ -13,13 +14,15 @@ def signin_request(request):
     username = request.POST['username']
     password = request.POST['password']
 
+    print(make_password("ouga"))
+
     try:
         user = CustomUser.objects.get(username=username)
     except CustomUser.DoesNotExist:
         redirect_url = reverse('User:signin')
         return HttpResponseRedirect(redirect_url)
 
-    if user.password == password:
+    if check_password(password,user.password):
         login(request, user)
         # return HttpResponseRedirect(reverse('Management:index'))
         return HttpResponseRedirect("/top")
