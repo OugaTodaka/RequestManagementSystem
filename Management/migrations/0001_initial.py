@@ -18,6 +18,7 @@ class Migration(migrations.Migration):
                 ('request_id', models.AutoField(primary_key=True, serialize=False)),
                 ('name', models.CharField(max_length=100)),
                 ('mail', models.EmailField(max_length=100)),
+                ('system_name',models.CharField(max_length=30, null=False, blank=False)),
                 ('date', models.DateField()),
             ],
         ),
