@@ -1,14 +1,15 @@
-from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import CustomUser
 from django.urls import reverse
-from django.contrib.auth import login,logout
-from django.contrib.auth.hashers import check_password, make_password
+from django.contrib.auth import login, logout
+from django.contrib.auth.hashers import check_password
 from django.template import loader
+
 
 def signin(request):
     template = loader.get_template("User/signin.html")
     return HttpResponse(template.render({}, request))
+
 
 def signin_request(request):
     username = request.POST['username']
@@ -20,13 +21,14 @@ def signin_request(request):
         redirect_url = reverse('User:signin')
         return HttpResponseRedirect(redirect_url)
 
-    if check_password(password,user.password):
+    if check_password(password, user.password):
         login(request, user)
         # return HttpResponseRedirect(reverse('Management:index'))
         return HttpResponseRedirect("/top")
     else:
         redirect_url = reverse('User:signin')
         return HttpResponseRedirect(redirect_url)
+
 
 def signout(request):
     logout(request)
