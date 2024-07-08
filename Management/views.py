@@ -5,8 +5,10 @@ from .models import Request,RequestFunction
 
 
 def top(request):
-    template = loader.get_template("top.html")
-    context = {'user': request.user}
-    cliente = Request.objects.all()
-    data = {'request': cliente }
-    return HttpResponse(template.render(data, request))
+    template = loader.get_template("Management/top.html")
+    data_list = Request.objects.all()
+    context = {
+        "data_list":data_list,
+        "user":request.user,
+    }
+    return HttpResponse(template.render(context, request))

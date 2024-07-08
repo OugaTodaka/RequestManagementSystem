@@ -12,7 +12,9 @@
         {{ user }}
     </div>
     <div>
-        {{ request.name }}
+        {% for data in data_list %}
+        {{ data.system_name }}
+        {% endfor %}
     </div>
 
     <!-- 後で作る -->
