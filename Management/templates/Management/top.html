@@ -6,17 +6,28 @@
     <title>要望一覧ページ</title>
 </head>
 <body>
-    <h1>ハロワ</h1>
-    <a>下に一覧を持ってくる</a>
+    <h2>top</h2>
     <div>
-        {{ user }}
+        ユーザ名：{{ user }}
     </div>
     <div>
-        {% for data in data_list %}
-        {{ data.system_name }}
-        {% endfor %}
-    </div>
+        <table border="1">
+            <tr>
+                <th>システム名</th>
+                <th>要望者</th>
+                <th></th>
+            </tr>
+            {% for data in data_list %}
+            <tr>
 
-    <!-- 後で作る -->
+                <td>{{ data.system_name }}</td>
+                <td>{{ data.name }}</td>
+                <td>
+                <a href="/detail/{{ data.request_id}} ">詳細</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
 </body>
 </html>

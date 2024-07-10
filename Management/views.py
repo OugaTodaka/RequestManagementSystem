@@ -12,3 +12,12 @@ def top(request):
         "user":request.user,
     }
     return HttpResponse(template.render(context, request))
+
+def detail(request,id):
+    template = loader.get_template("Management/detail.html")
+    data = Request.objects.get(request_id=id)
+    context = {
+        "data":data,
+        "user":request.user,
+    }
+    return HttpResponse(template.render(context, request))
