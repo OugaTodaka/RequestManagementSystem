@@ -23,3 +23,13 @@ def detail(request,id):
         "user":request.user,
     }
     return HttpResponse(template.render(context, request))
+
+@login_required
+def portfolio(request):
+    template = loader.get_template("Management/portfolio.html")
+    data_list = Request.objects.all()
+    context = {
+        "data_list":data_list,
+        "user":request.user,
+    }
+    return HttpResponse(template.render(context, request))
