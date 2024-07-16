@@ -8,5 +8,6 @@ class Request(models.Model):
     system_overview = models.CharField(max_length=1000, null=False, blank=False, default='default')
     mail = models.EmailField(max_length=100, null=False, blank=False)
     date = models.DateField(auto_now_add=True, null=False, blank=False)
+    status = models.IntegerField(default=0)
     def __str__(self):
         return self.system_name
