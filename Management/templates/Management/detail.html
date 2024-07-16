@@ -11,10 +11,48 @@
         ユーザ名：{{ user }}
     </div>
     <div>
-        <ul>
-            <li>{{data.system_name}}</li>
-            <li>{{data.name}}</li>
-        </ul>
+        <table>
+            <tr>
+                <th>
+                    システム名
+                </th>
+                <td>
+                    {{data.system_name}}
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    要望者
+                </th>
+                <td>
+                    {{data.name}}
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    システム内容
+                </th>
+                <td>
+                    {{data.system_overview}}
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    メルアド
+                </th>
+                <td>
+                    {{data.mail}}
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    要望日
+                </th>
+                <td>
+                    {{data.date}}
+                </td>
+            </tr>
+        </table>
     </div>
 </body>
 </html>
