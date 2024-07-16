@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>{% block title %}{% endblock %} </title>
+    <link rel = "stylesheet" href="/style.css"/>
+
+</head>
+<body>
+    <article>
+        <div class="side">
+            <a href="/top">要望一覧ページ</a>
+            <a href="/portfolio">完成プロジェクト一覧</a>
+        </div> 
+        <div class="content">
+            {% block contents %}
+            {% endblock %}
+        </div>
+    </article>
+</body>
+</html>

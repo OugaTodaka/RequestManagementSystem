@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>要望一覧ページ</title>
-</head>
+{% extends 'Management/base.html' %}
+{% block title %}要望一覧ページ{% endblock %}
+{% block contents %}
 <body>
     <h2>top</h2>
     <div>
@@ -29,6 +25,6 @@
             {% endfor %}
         </table>
     </div>
-    <a href="/portfolio">完成プロジェクト一覧</a>
+
 </body>
-</html>
+{% endblock %}
