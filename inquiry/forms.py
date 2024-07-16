@@ -5,8 +5,8 @@ from django.core.mail import EmailMessage
 class InquiryForm(forms.Form):
     name = forms.CharField(label='名前')
     email = forms.EmailField(label = 'メールアドレス')
-    title = forms.CharField(label = 'タイトル',max_length=40)
-    message = forms.CharField(label='メッセージ',widget=forms.Textarea)
+    title = forms.CharField(label = '件名',max_length=40)
+    message = forms.CharField(label='問い合わせ内容',widget=forms.Textarea)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args,**kwargs)
@@ -19,7 +19,7 @@ class InquiryForm(forms.Form):
         self.fields['email'].widget.attrs['class'] = 'form-control'
 
         self.fields['title'].widget.attrs['placeholder'] = \
-            'タイトルを入力してください'
+            '件名を入力してください'
         self.fields['title'].widget.attrs['class'] = 'form-control'
 
         self.fields['message'].widget.attrs['placeholder'] = \
@@ -34,9 +34,9 @@ class InquiryForm(forms.Form):
 
         subject = 'お問い合わせ{}'.format(title)
         message = '送信者名: {0}\nメールアドレス: {1}\nメッセージ:\n{2}'.format(name,email,message)
-        from_email = ''
+        from_email = 'fko2347077@stu.o-hara.ac.jp'
         to_list = [
-            ''
+            'fko2347077@stu.o-hara.ac.jp'
         ]
         cc_list = [
             email
