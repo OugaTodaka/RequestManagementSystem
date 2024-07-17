@@ -15,13 +15,22 @@
             <tr>
                 <th>システム名</th>
                 <th>要望者</th>
+                <th>状況</th>
                 <th></th>
             </tr>
             {% for data in data_list %}
             <tr>
-
                 <td>{{ data.system_name }}</td>
                 <td>{{ data.name }}</td>
+                <td>
+                {% if data.status == 0 %}
+                    受理済み
+                {% elif data.status == 1 %}
+                    実装中
+                {% else %}
+                    実装完了
+                {% endif %}
+                </td>
                 <td>
                 <a href="/detail/{{ data.request_id}} ">詳細</a>
                 </td>

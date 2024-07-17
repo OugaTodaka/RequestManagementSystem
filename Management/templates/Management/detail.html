@@ -11,13 +11,15 @@
         ユーザ名：{{ user }}
     </div>
     <div>
+        <form method="post" action="{% url 'Management:detail_update' data.request_id %}">
+        {% csrf_token %}
         <table>
             <tr>
                 <th>
                     システム名
                 </th>
                 <td>
-                    {{data.system_name}}
+                    <input name="system_name" type="text" value="{{data.system_name}}">
                 </td>
             </tr>
             <tr>
@@ -33,7 +35,7 @@
                     システム内容
                 </th>
                 <td>
-                    {{data.system_overview}}
+                    <textarea name="system_overview" cols="32" rows="5">{{data.system_overview}}</textarea>
                 </td>
             </tr>
             <tr>
@@ -46,7 +48,7 @@
             </tr>
             <tr>
                 <th>
-                    要望日
+                    要望受付日
                 </th>
                 <td>
                     {{data.date}}
@@ -54,12 +56,28 @@
             </tr>
             <tr>
                 <th>
+                    状況
+                </th>
+                <td>
+                    <p><input type="radio" id="zero" name="status" value="0" {% if data.status == 0 %}checked{%endif%} />
+                    <label for="zero">受理済み</label></p>
+                    <p><input type="radio" id="one" name="status" value="1"  {% if data.status == 1 %}checked{%endif%} />
+                    <label for="one">実装中</label></p>
+                    <p><input type="radio" id="two" name="status" value="2"  {% if data.status == 2 %}checked{%endif%} />
+                    <label for="two">実装完了</label></p>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="更新"></td>
+            </tr>
+            <tr>
+                <th>
                     <a href="/top">戻る</a>
                     <button>お問い合わせ</button>
-                    <button>受理</button>
                 </th>
             </tr>
         </table>
+    </form>
     </div>
 </body>
 </html>
