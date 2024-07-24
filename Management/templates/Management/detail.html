@@ -67,15 +67,19 @@
             <tr>
                 <td><input type="submit" value="更新"></td>
             </tr>
-            <tr>
-                <th>
-                    <a href="/top">戻る</a>
-                    <button>お問い合わせ</button>
-                </th>
-            </tr>
             </table>
         </table>
-    </form>
+        </form>
+            <form  method="post" action="{% url 'inquiry:index' data.request_id %}">
+                {% csrf_token %}
+                <p>Request ID: {{ data.request_id }}</p>
+                <tr>
+                    <th>
+                        <input type="submit" value="お問い合わせ">
+                    </th>
+                </tr>
+            </form>
+        <a href="/top">戻る</a>
     </div>
 </body>
 {% endblock %}

@@ -137,3 +137,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'User.CustomUser'
 
 LOGIN_URL = '/signin'
+# settings.py
+
+
+EMAIL_HOST = 'smtp-mail.outlook.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'fko2347077@stu.o-hara.ac.jp'
+DEFAULT_FROM_EMAIL = 'fko2347077@stu.o-hara.ac.jp'
+EMAIL_HOST_PASSWORD = 'Zu99748m'
+EMAIL_USE_TLS = True
