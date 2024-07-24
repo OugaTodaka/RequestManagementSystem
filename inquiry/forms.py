@@ -4,8 +4,7 @@ from Management.models import Request
 
 
 class InquiryForm(forms.Form):
-    name = forms.CharField(label='名前')
-    email = forms.EmailField(label = 'メールアドレス')
+    name = forms.CharField(label='チーム名')
     title = forms.CharField(label = '件名',max_length=40)
     message = forms.CharField(label='問い合わせ内容',widget=forms.Textarea)
 
@@ -27,11 +26,8 @@ class InquiryForm(forms.Form):
         # # self.fields['name'].widget.attrs['readonly'] = True
         # # self.fields['email'].widget.attrs['readonly'] = True
 
-        self.fields['name'].widget.attrs['placeholder'] = 'お名前を入力してください'
+        self.fields['name'].widget.attrs['placeholder'] = 'チーム名を入力してください'
         self.fields['name'].widget.attrs['class'] = 'form-control'
-
-        self.fields['email'].widget.attrs['placeholder'] = 'メールアドレスを入力してください'
-        self.fields['email'].widget.attrs['class'] = 'form-control'
 
         self.fields['title'].widget.attrs['placeholder'] = \
             '件名を入力してください'
