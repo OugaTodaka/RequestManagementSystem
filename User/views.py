@@ -24,7 +24,7 @@ def signin_request(request):
     if check_password(password, user.password):
         login(request, user)
         # return HttpResponseRedirect(reverse('Management:index'))
-        return HttpResponseRedirect("/top")
+        return HttpResponseRedirect("/")
     else:
         redirect_url = reverse('User:signin')
         return HttpResponseRedirect(redirect_url)

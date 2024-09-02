@@ -2,7 +2,32 @@
 {% block title %}完成プロジェクト{% endblock %}
 {% block contents %}
 <body>
-    <a>以下完成した作品をつける</a>
+    <h2>完成プロジェクト</h2>
+    <div>
+        ユーザ名：{{ user }}
+    </div>
+    <div>
+        <table border="1">
+            <tr>
+                <th>システム名</th>
+                <th>要望者</th>
+                <th>状況</th>
+                <th></th>
+            </tr>
+            {% for data in data_list %}
+                {% if data.status != 0 and data.status != 1 %}
+                    <tr>
+                        <td>{{ data.system_name }}</td>
+                        <td>{{ data.name }}</td>
+                        <td>
+                            実装完了
+                        </td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        </table>
+    </div>
+
 
 </body>
 {% endblock %}
