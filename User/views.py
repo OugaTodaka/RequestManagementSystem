@@ -1,5 +1,5 @@
 from django.http import HttpResponse, HttpResponseRedirect
-from Management.models import User
+from .models import User
 from django.urls import reverse
 from django.contrib.auth import login, logout
 from django.contrib.auth.hashers import check_password
