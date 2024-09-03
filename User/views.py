@@ -1,5 +1,5 @@
 from django.http import HttpResponse, HttpResponseRedirect
-from .models import CustomUser
+from Management.models import User
 from django.urls import reverse
 from django.contrib.auth import login, logout
 from django.contrib.auth.hashers import check_password
@@ -16,8 +16,8 @@ def signin_request(request):
     password = request.POST['password']
 
     try:
-        user = CustomUser.objects.get(username=username)
-    except CustomUser.DoesNotExist:
+        user = User.objects.get(username=username)
+    except User.DoesNotExist:
         redirect_url = reverse('User:signin')
         return HttpResponseRedirect(redirect_url)
 
