@@ -1,4 +1,4 @@
 from django.contrib import admin
-from Management.models import User
+from requestForm.models import User
 
 admin.site.register(User)

@@ -6,7 +6,7 @@ from django.views.generic import FormView
 from django.urls import reverse_lazy
 from django.views.generic.base import TemplateView
 from .forms import InquiryForm
-from Management.models import Request
+from requestForm.models import Request
 from django.contrib import messages
 from django.core.mail import EmailMessage
 # Create your views here.

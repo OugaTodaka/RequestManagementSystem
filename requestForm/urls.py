@@ -1,7 +1,7 @@
 from django.urls import path
 from . import views
 
-app_name = 'Management'
+app_name = 'requestForm'
 
 urlpatterns = [
     path("", views.top, name="top"),

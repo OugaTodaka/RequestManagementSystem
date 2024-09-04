@@ -33,7 +33,7 @@ ALLOWED_HOSTS = ['127.0.0.1','localhost','160.251.166.83']
 
 INSTALLED_APPS = [
     'User.apps.UserConfig',
-    'Management.apps.ManagementConfig',
+    'requestForm.apps.RequestformConfig',
     'inquiry.apps.InquiryConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -135,7 +135,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AUTH_USER_MODEL = 'Management.User'
+AUTH_USER_MODEL = 'requestForm.User'
 
 LOGIN_URL = '/signin'
 # settings.py

@@ -1,5 +1,5 @@
 from django.http import HttpResponse, HttpResponseRedirect
-from Management.models import User
+from requestForm.models import User
 from django.urls import reverse
 from django.contrib.auth import login, logout
 from django.contrib.auth.hashers import check_password
@@ -23,7 +23,7 @@ def signin_request(request):
 
     if check_password(password, user.password):
         login(request, user)
-        # return HttpResponseRedirect(reverse('Management:index'))
+        # return HttpResponseRedirect(reverse('requestForm:index'))
         return HttpResponseRedirect("/")
     else:
         redirect_url = reverse('User:signin')

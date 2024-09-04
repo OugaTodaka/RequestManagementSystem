@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def top(request):
-    template = loader.get_template("Management/top.html")
+    template = loader.get_template("requestForm/top.html")
     data_list = Request.objects.all()
     context = {
         "data_list":data_list,
@@ -17,7 +17,7 @@ def top(request):
 
 @login_required
 def detail(request,id):
-    template = loader.get_template("Management/detail.html")
+    template = loader.get_template("requestForm/detail.html")
     data = Request.objects.get(request_id=id)
     context = {
         "data":data,
@@ -32,11 +32,11 @@ def detail_update(request,id):
     data.system_overview = request.POST.get("system_overview")
     data.status = request.POST.get("status")
     data.save()
-    return HttpResponseRedirect(reverse("Management:detail",args=[id]))
+    return HttpResponseRedirect(reverse("requestForm:detail",args=[id]))
 
 @login_required
 def portfolio(request):
-    template = loader.get_template("Management/portfolio.html")
+    template = loader.get_template("requestForm/portfolio.html")
     data_list = Request.objects.all()
     context = {
         "data_list":data_list,

@@ -1,4 +1,4 @@
-{% extends 'Management/base.html' %}
+{% extends 'requestForm/base.html' %}
 {% block title %}要望詳細ページ{% endblock %}
 {% block contents %}
 <body>
@@ -7,7 +7,7 @@
         ユーザ名：{{ user }}
     </div>
     <div>
-        <form method="post" action="{% url 'Management:detail_update' data.request_id %}">
+        <form method="post" action="{% url 'requestForm:detail_update' data.request_id %}">
         {% csrf_token %}
         <table>
             <tr>
@@ -79,7 +79,7 @@
                     </th>
                 </tr>
             </form>
-        <a href="{% url 'Management:top' %}">戻る</a>
+        <a href="{% url 'requestForm:top' %}">戻る</a>
     </div>
 </body>
 {% endblock %}

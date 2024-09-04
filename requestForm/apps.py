@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class ManagementConfig(AppConfig):
+class RequestformConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'Management'
+    name = 'requestForm'
