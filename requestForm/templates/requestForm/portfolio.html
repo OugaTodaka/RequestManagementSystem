@@ -1,4 +1,4 @@
-{% extends 'requestForm/base.html' %}
+{% extends 'Management/base.html' %}
 {% block title %}完成プロジェクト{% endblock %}
 {% block contents %}
 <body>
@@ -27,6 +27,84 @@
             {% endfor %}
         </table>
     </div>
+    <div>
+        <form method="post" action="">
+            <table>
+                <tr>
+                    <h2>ポートフォリオ追加フォーム</h2>
+                    <th>
+                        システム名
+                    </th>
+                    <td>
+                        <input name="name" type="text"  required>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        概要
+                    </th>
+                    <td>
+                        <input name="description" type="text" required>
+                    </td>
+                </tr>
+                <tr>
+                    <th>使用言語</th>
+                    <td>
+                        <input list="gengo" id="" name="" required>
+                            <datalist id="gengo">
+                                <option value="Python">
+                                <option value="java">
+                                <option value="Go言語">
+                            </datalist>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        制作参加人数
+                    </th>
+                    <td>
+                        <input name="production_people" type="" value="" required>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        制作期間
+                    </th>
+                    <td>
+                        <input name="production_period" type="" value="" required>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Github
+                    </th>
+                    <td>
+                        <input name="github_url" type="url" value="" >
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        公開リンク
+                    </th>
+                    <td>
+                        <input name="project_url" type="url" value="">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        サンプル画像
+                    </th>
+                    <td>
+                        <input name="image_path" type="file"  required multiple/>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="作成"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
 
 
 </body>
